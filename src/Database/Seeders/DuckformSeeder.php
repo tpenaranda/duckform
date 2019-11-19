@@ -15,7 +15,7 @@ class DuckformSeeder extends Seeder
      */
     public function run()
     {
-        Form::all()->each->forceDelete();
+        Form::whereSlug('the_quartz_clinic_questionnaire')->delete()
 
         $form = Duckform::factory(Form::class)->create([
             'slug' => 'the_quartz_clinic_questionnaire',
@@ -968,6 +968,5 @@ class DuckformSeeder extends Seeder
         }
 
         $this->command->getOutput()->writeln('<info>Form Token:</info>' . $form->getToken());
-
     }
 }
