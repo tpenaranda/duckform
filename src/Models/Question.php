@@ -33,6 +33,11 @@ class Question extends Model
       'form_id'
     ];
 
+    protected $casts = [
+      'randomize_possible_answers' => 'boolean',
+      'required' => 'boolean',
+    ];
+
     public function form()
     {
         return $this->belongsTo(Form::class);

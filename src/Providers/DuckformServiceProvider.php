@@ -16,7 +16,7 @@ class DuckformServiceProvider extends ServiceProvider
 
         Route::group([
             'namespace' => 'TPenaranda\Duckform\Http\Controllers',
-            'prefix' => 'duckforms',
+            'prefix' => 'api/duckforms',
         ], function () {
             $this->loadRoutesFrom(__DIR__ . '/../Http/routes.php');
         });

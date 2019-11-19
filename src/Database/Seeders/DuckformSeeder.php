@@ -19,7 +19,7 @@ class DuckformSeeder extends Seeder
 
         $form = Duckform::factory(Form::class)->create([
             'slug' => 'the_quartz_clinic_questionnaire',
-            'title' => 'TQC Intake Questionnaire',
+            'title' => 'Intake Questionnaire',
             'description' => 'Here is where I get to know you further!. Please fill out the follow questionnaire before our meeting!.'
         ]);
 
