@@ -15,7 +15,7 @@ class DuckformSeeder extends Seeder
      */
     public function run()
     {
-        Form::whereSlug('the_quartz_clinic_questionnaire')->delete()
+        Form::whereSlug('the_quartz_clinic_questionnaire')->delete();
 
         $form = Duckform::factory(Form::class)->create([
             'slug' => 'the_quartz_clinic_questionnaire',
