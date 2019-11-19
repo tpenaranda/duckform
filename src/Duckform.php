@@ -3,6 +3,7 @@
 namespace TPenaranda\Duckform;
 
 use Illuminate\Database\Eloquent\Factory as EloquentFactory;
+use TPenaranda\Duckform\Models\Form;
 
 class Duckform
 {
@@ -24,5 +25,18 @@ class Duckform
         }
 
         return $this->factory->of($arguments[0]);
+    }
+
+    public static function find($id, $columns = ['*'])
+    {
+        if (is_string($id) && !is_numeric($id)) {
+            return Form::whereSlug($id)->first($columns) ?? Form::firstByToken($id, $columns);
+        }
+
+        if (is_array($id) || $id instanceof Arrayable) {
+            return Form::findMany($id, $columns);
+        }
+
+        return Form::whereKey($id)->first($columns);
     }
 }

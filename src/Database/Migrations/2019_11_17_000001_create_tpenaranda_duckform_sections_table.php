@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTpenarandaDuckformFormsTable extends Migration
+class CreateTpenarandaDuckformSectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,6 +18,7 @@ class CreateTpenarandaDuckformFormsTable extends Migration
             $table->string('slug')->unique();
             $table->string('title');
             $table->text('description')->nullable();
+            $table->unsignedInteger('order')->nullable();
             $table->unsignedBigInteger('form_id');
 
             $table->foreign('form_id')->references('id')->on('tpenaranda_duckform_forms')->onDelete('cascade');
