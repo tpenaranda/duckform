@@ -2,11 +2,11 @@
 
 use Faker\Generator as Faker;
 use TPenaranda\Duckform\Facade\Duckform;
-use TPenaranda\Duckform\Models\{PossibleAnswer, Question};
+use TPenaranda\Duckform\Models\{PossibleAnswer, Question, Section};
 
 $factory->define(Question::class, function (Faker $faker) {
     return [
-        'form_id' => Duckform::factory(Form::class),
+        'section_id' => Duckform::factory(Section::class),
         'randomize_possible_answers' => $faker->boolean,
         'text' => $faker->sentence(3),
         'type' => $faker->randomElement(Question::TYPES),

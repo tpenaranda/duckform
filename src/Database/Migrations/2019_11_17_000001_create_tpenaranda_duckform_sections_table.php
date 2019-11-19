@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTpenarandaDuckformQuestionsTable extends Migration
+class CreateTpenarandaDuckformFormsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTpenarandaDuckformQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tpenaranda_duckform_questions', function (Blueprint $table) {
+        Schema::create('tpenaranda_duckform_sections', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('randomize_possible_answers')->default(false);
-            $table->string('type');
-            $table->text('text');
+            $table->string('slug')->unique();
+            $table->string('title');
+            $table->text('description')->nullable();
             $table->unsignedBigInteger('form_id');
 
             $table->foreign('form_id')->references('id')->on('tpenaranda_duckform_forms')->onDelete('cascade');
@@ -31,6 +31,6 @@ class CreateTpenarandaDuckformQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tpenaranda_duckform_questions');
+        Schema::dropIfExists('tpenaranda_duckform_sections');
     }
 }
