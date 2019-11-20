@@ -19,7 +19,7 @@ $factory->afterCreatingState(Question::class,'with-possible-answers' ,function (
         case 'single_select':
             $items = range(1, rand(3, 5));
             break;
-        case 'scale_1-10':
+        case 'scale':
             $items = range(1, 10);
             break;
         case 'yes_no':

@@ -15,7 +15,7 @@ class Question extends Model
        'free_text',
        'integer',
        'multiselect',
-       'scale_1-10',
+       'scale',
        'single_select',
        'yes_no',
        'date'

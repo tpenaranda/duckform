@@ -216,7 +216,7 @@ class DuckformSeeder extends Seeder
                         'randomize_possible_answers' => false,
                         'required' => true,
                         'text' => 'I am motivated to change my diet',
-                        'type' => 'scale_1-10',
+                        'type' => 'scale',
                         'possibleAnswers' => [
                             ['text' => 'Not Motivated'],
                             ['text' => null],
@@ -233,7 +233,7 @@ class DuckformSeeder extends Seeder
                         'randomize_possible_answers' => false,
                         'required' => true,
                         'text' => 'I am motivated to get on a supplement routine',
-                        'type' => 'scale_1-10',
+                        'type' => 'scale',
                         'possibleAnswers' => [
                             ['text' => 'Not Motivated'],
                             ['text' => null],
@@ -250,7 +250,7 @@ class DuckformSeeder extends Seeder
                         'randomize_possible_answers' => false,
                         'required' => true,
                         'text' => 'I am motivated to make lifestyle changes',
-                        'type' => 'scale_1-10',
+                        'type' => 'scale',
                         'possibleAnswers' => [
                             ['text' => 'Not Motivated'],
                             ['text' => null],
@@ -593,7 +593,7 @@ class DuckformSeeder extends Seeder
                         'randomize_possible_answers' => false,
                         'required' => false,
                         'text' => 'Over the last week, my typical energy levels was',
-                        'type' => 'scale_1-10',
+                        'type' => 'scale',
                         'possibleAnswers' => [
                             ['text' => 'Little to no energy'],
                             ['text' => null],
@@ -649,7 +649,7 @@ class DuckformSeeder extends Seeder
                         'randomize_possible_answers' => false,
                         'required' => false,
                         'text' => 'I get (?) hours of sleep a night on average',
-                        'type' => 'scale_1-10',
+                        'type' => 'scale',
                         'possibleAnswers' => [
                             ['text' => 'One hour'],
                             ['text' => null],
@@ -688,7 +688,7 @@ class DuckformSeeder extends Seeder
                         'randomize_possible_answers' => false,
                         'required' => false,
                         'text' => 'On a daily basis, I feel stress from work',
-                        'type' => 'scale_1-10',
+                        'type' => 'scale',
                         'possibleAnswers' => [
                             ['text' => 'Little to no stress'],
                             ['text' => null],
@@ -705,7 +705,7 @@ class DuckformSeeder extends Seeder
                         'randomize_possible_answers' => false,
                         'required' => false,
                         'text' => 'On a daily basis, I feel stress from family',
-                        'type' => 'scale_1-10',
+                        'type' => 'scale',
                         'possibleAnswers' => [
                             ['text' => 'Little to no stress'],
                             ['text' => null],
@@ -722,7 +722,7 @@ class DuckformSeeder extends Seeder
                         'randomize_possible_answers' => false,
                         'required' => false,
                         'text' => 'On a daily basis, I feel stress from finances',
-                        'type' => 'scale_1-10',
+                        'type' => 'scale',
                         'possibleAnswers' => [
                             ['text' => 'Little to no stress'],
                             ['text' => null],
@@ -739,7 +739,7 @@ class DuckformSeeder extends Seeder
                         'randomize_possible_answers' => false,
                         'required' => false,
                         'text' => 'On a daily basis, I feel stress from my health',
-                        'type' => 'scale_1-10',
+                        'type' => 'scale',
                         'possibleAnswers' => [
                             ['text' => 'Little to no stress'],
                             ['text' => null],
@@ -756,7 +756,7 @@ class DuckformSeeder extends Seeder
                         'randomize_possible_answers' => false,
                         'required' => false,
                         'text' => 'On a daily basis, I feel stress from social situations',
-                        'type' => 'scale_1-10',
+                        'type' => 'scale',
                         'possibleAnswers' => [
                             ['text' => 'Little to no stress'],
                             ['text' => null],
