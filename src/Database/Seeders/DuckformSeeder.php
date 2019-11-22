@@ -18,8 +18,8 @@ class DuckformSeeder extends Seeder
         Form::whereSlug('the_quartz_clinic_questionnaire')->delete();
 
         $form = Duckform::factory(Form::class)->create([
-            'slug' => 'the_quartz_clinic_questionnaire',
-            'title' => 'Intake Questionnaire',
+            'slug' => 'intake-questionnaire',
+            'title' => 'The Quartz Clinic Intake Questionnaire',
             'description' => 'Here is where I get to know you further!. Please fill out the follow questionnaire before our meeting!.'
         ]);
 
