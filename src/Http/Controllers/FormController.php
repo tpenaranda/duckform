@@ -5,7 +5,7 @@ namespace TPenaranda\Duckform\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use TPenaranda\Duckform\Facade\Duckform;
-use TPenaranda\Duckform\Models\FormSubmit;
+use TPenaranda\Duckform\Models\{FormSubmit, PossibleAnswer};
 
 class FormController extends Controller
 {
@@ -60,5 +60,34 @@ class FormController extends Controller
         });
 
         return $form;
+    }
+
+    public function saveFormSubmit(Request $request, string $formIdentifier, string $submitToken)
+    {
+        if (empty($form = Duckform::find($formIdentifier))) {
+            abort(404);
+        }
+
+        if (empty($formSubmit = FormSubmit::firstByToken($submitToken))) {
+            abort(404);
+        }
+
+        if (!$formSubmit->form->is($form)) {
+            abort(400);
+        }
+
+        foreach ($request->json('questions') as $question) {
+            $formSubmit->responses()->detach(PossibleAnswer::whereHas('question', function ($builder) use ($question) {
+                return $builder->whereId($question['id']);
+            })->get());
+
+            foreach ($question['possible_answers_selected'] as $answer) {
+                $formSubmit->responses()->attach($answer['id'], [
+                    'possible_answer_data' => empty($answer['data']) ? null : $answer['data'],
+                ]);
+            }
+        }
+
+        return $form->refresh()->load('sections.questions.possibleAnswers');
     }
 }
