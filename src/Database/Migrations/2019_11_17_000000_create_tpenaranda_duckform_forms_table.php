@@ -16,7 +16,7 @@ class CreateTpenarandaDuckformFormsTable extends Migration
         Schema::create('tpenaranda_duckform_forms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('slug')->unique();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });

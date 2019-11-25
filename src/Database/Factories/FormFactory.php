@@ -14,7 +14,7 @@ $factory->define(Form::class, function (Faker $faker) {
     ];
 });
 
-$factory->afterCreatingState(Form::class, 'with-sections', function ($form, $faker) {
+$factory->afterCreatingState(Form::class, 'with-sections-with-questions-with-possible-answers', function ($form, $faker) {
     Duckform::factory(Section::class, rand(2, 5))->states('with-questions')->create([
         'form_id' => $form->id,
     ]);

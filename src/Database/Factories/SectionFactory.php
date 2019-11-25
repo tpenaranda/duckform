@@ -2,12 +2,13 @@
 
 use Faker\Generator as Faker;
 use TPenaranda\Duckform\Facade\Duckform;
-use TPenaranda\Duckform\Models\{Section, Question};
+use TPenaranda\Duckform\Models\{Form, Question, Section};
 
 $factory->define(Section::class, function (Faker $faker) {
     $title = $faker->sentence(2);
 
     return [
+        'form_id' => Duckform::factory(Form::class),
         'description' => $faker->sentence(2),
         'slug' => str_slug($title),
         'title' => $title,

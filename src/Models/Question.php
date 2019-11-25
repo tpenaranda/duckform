@@ -2,6 +2,7 @@
 
 namespace TPenaranda\Duckform\Models;
 
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany};
 use Illuminate\Database\Eloquent\{Builder, Model};
 use Illuminate\Support\Collection;
 
@@ -29,27 +30,13 @@ class Question extends Model
         'type',
     ];
 
-    protected $hidden = [
-      'form_id'
-    ];
-
-    protected $casts = [
-      'randomize_possible_answers' => 'boolean',
-      'required' => 'boolean',
-    ];
-
-    public function form()
+    public function form(): BelongsTo
     {
         return $this->belongsTo(Form::class);
     }
 
-    public function possibleAnswers()
+    public function possibleAnswers(): HasMany
     {
         return $this->hasMany(PossibleAnswer::class, 'question_id');
-    }
-
-    public function isCustomInput(): bool
-    {
-        return in_array($this->type, ['free_text', 'integer', 'date']);
     }
 }

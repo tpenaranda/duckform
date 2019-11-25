@@ -17,23 +17,56 @@ $factory->afterCreatingState(Question::class,'with-possible-answers' ,function (
     switch ($question->type) {
         case 'multiselect':
         case 'single_select':
-            $items = range(1, rand(3, 5));
+            foreach (range(1, rand(3, 6)) as $order) {
+                Duckform::factory(PossibleAnswer::class)->create([
+                    'order' => $order,
+                    'question_id' => $question->id,
+                    'text' => $faker->sentence(2),
+                ]);
+            }
             break;
         case 'scale':
-            $items = range(1, 10);
+            Duckform::factory(PossibleAnswer::class)->create([
+                'question_id' => $question->id,
+                'text' => 'Lowest',
+            ]);
+            Duckform::factory(PossibleAnswer::class, rand(0, 1) ? range(1, 3) : range(1, 8))->create([
+                'question_id' => $question->id,
+            ]);
+            Duckform::factory(PossibleAnswer::class)->create([
+                'question_id' => $question->id,
+                'text' => 'Highest',
+            ]);
             break;
         case 'yes_no':
-            $items = range(1, 2);
+            Duckform::factory(PossibleAnswer::class)->create([
+                'question_id' => $question->id,
+                'text' => 'Yes',
+            ]);
+            Duckform::factory(PossibleAnswer::class)->create([
+                'question_id' => $question->id,
+                'text' => 'No',
+            ]);
             break;
-        default:
-            $items = [1];
+        case 'free_text':
+        case 'date':
+            Duckform::factory(PossibleAnswer::class)->create([
+                'question_id' => $question->id,
+                'text' => null,
+            ]);
             break;
-    }
+        case 'integer':
+            Duckform::factory(PossibleAnswer::class)->create([
+                'question_id' => $question->id,
+                'text' => 'Units',
+            ]);
+            break;
 
-    foreach ($items as $i) {
-        $possible = Duckform::factory(PossibleAnswer::class)->create([
-            'question_id' => $question->id,
-            'text' => $faker->sentence(2),
-        ]);
+        default:
+            Duckform::factory(PossibleAnswer::class)->create([
+                'question_id' => $question->id,
+                'text' => $faker->sentence(2),
+            ]);
+            break;
     }
 });

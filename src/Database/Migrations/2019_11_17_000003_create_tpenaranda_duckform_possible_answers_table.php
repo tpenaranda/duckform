@@ -16,9 +16,9 @@ class CreateTpenarandaDuckformPossibleAnswersTable extends Migration
         Schema::create('tpenaranda_duckform_possible_answers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('text')->nullable();
-            $table->unsignedTinyInteger('order')->default(0);
-            $table->unsignedBigInteger('question_id');
+            $table->unsignedTinyInteger('order')->nullable();
 
+            $table->unsignedBigInteger('question_id');
             $table->foreign('question_id')->references('id')->on('tpenaranda_duckform_questions')->onDelete('cascade');
         });
     }

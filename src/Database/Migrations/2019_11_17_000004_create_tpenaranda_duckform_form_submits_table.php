@@ -16,11 +16,11 @@ class CreateTpenarandaDuckformFormSubmitsTable extends Migration
         Schema::create('tpenaranda_duckform_form_submits', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamp('completed_at')->nullable();
-            $table->string('reference_id')->nullable()->unique();
+            $table->string('reference_id')->nullable();
+
             $table->unsignedBigInteger('form_id');
-            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('form_id')->references('id')->on('tpenaranda_duckform_forms')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

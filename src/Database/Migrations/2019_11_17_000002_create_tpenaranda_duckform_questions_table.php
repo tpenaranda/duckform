@@ -19,8 +19,8 @@ class CreateTpenarandaDuckformQuestionsTable extends Migration
             $table->boolean('required')->default(true);
             $table->string('type');
             $table->text('text');
-            $table->unsignedBigInteger('section_id');
 
+            $table->unsignedBigInteger('section_id');
             $table->foreign('section_id')->references('id')->on('tpenaranda_duckform_sections')->onDelete('cascade');
         });
     }

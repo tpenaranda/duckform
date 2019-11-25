@@ -19,8 +19,8 @@ class CreateTpenarandaDuckformSectionsTable extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->unsignedInteger('order')->nullable();
-            $table->unsignedBigInteger('form_id');
 
+            $table->unsignedBigInteger('form_id');
             $table->foreign('form_id')->references('id')->on('tpenaranda_duckform_forms')->onDelete('cascade');
         });
     }

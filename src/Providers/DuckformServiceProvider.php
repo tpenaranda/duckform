@@ -2,11 +2,9 @@
 
 namespace TPenaranda\Duckform\Providers;
 
-use Faker\Generator as FakerGenerator;
-use Illuminate\Database\Eloquent\Factory as EloquentFactory;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use TPenaranda\Duckform\Duckform;
+use TPenaranda\Duckform\Models\Form;
 
 class DuckformServiceProvider extends ServiceProvider
 {
@@ -25,12 +23,7 @@ class DuckformServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('tpenaranda-duckform', function () {
-            $eloquentFactory = EloquentFactory::construct(
-                app(FakerGenerator::class),
-                __DIR__ . '/../Database/Factories'
-            );
-
-            return new Duckform($eloquentFactory);
+            return new Form();
         });
     }
 }
