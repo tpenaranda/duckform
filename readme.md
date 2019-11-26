@@ -37,7 +37,7 @@ Form objects (Form structure)
 GET 'api/duckforms/' Get all Forms.
 GET 'api/duckforms/{id-slug-token}' Get single Form.
 
-FormSubmit objects (Data submmited for a Form)
+FormSubmit objects (Data submitted for a Form)
 POST 'api/duckforms/{id-slug-token}/submits' Create a FormSubmit.
 PATCH 'api/duckforms/{id-slug-token}/submits/{submitToken}' Modify a FormSubmit
 GET 'api/duckforms/{id-slug-token}/submits/{formSubmitToken}' Get a single FormSubmit.
