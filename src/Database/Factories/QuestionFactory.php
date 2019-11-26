@@ -6,8 +6,9 @@ use TPenaranda\Duckform\Models\{PossibleAnswer, Question, Section};
 
 $factory->define(Question::class, function (Faker $faker) {
     return [
-        'section_id' => Duckform::factory(Section::class),
         'randomize_possible_answers' => $faker->boolean,
+        'required' => $faker->boolean,
+        'section_id' => Duckform::factory(Section::class),
         'text' => $faker->sentence(3),
         'type' => $faker->randomElement(Question::TYPES),
     ];
