@@ -8,7 +8,7 @@ Laravel package to modelize Forms/Surveys, save them into DB and handle them usi
 
 For FE VueJS components please ping `tate@tpenranda.com` (npm package will be available by 2020).
 
-### This package is being used to feed a VueJS app as you can see below. Form schema is defined [this way](https://raw.githubusercontent.com/tpenaranda/duckform/master/src/Database/Seeders/FormExamples/patient-intake-questionnaire.php).
+This package is being used to feed a VueJS app as you can see below. Form schema is defined [this way](https://raw.githubusercontent.com/tpenaranda/duckform/master/src/Database/Seeders/FormExamples/patient-intake-questionnaire.php).
 <p align="center">
   <img src="https://raw.githubusercontent.com/tpenaranda/duckform/master/screenshot.png" width="800">
 </p>
