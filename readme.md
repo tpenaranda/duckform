@@ -2,8 +2,10 @@
 
 [![Latest Stable Version](https://poser.pugx.org/tpenaranda/duckform/v/stable)](https://packagist.org/packages/tpenaranda/duckform) [![Total Downloads](https://poser.pugx.org/tpenaranda/duckform/downloads)](https://packagist.org/packages/tpenaranda/duckform) [![License](https://poser.pugx.org/tpenaranda/duckform/license)](https://packagist.org/packages/tpenaranda/duckform)
 
-***WIP, this is on a really early stage***
+***WIP, this is on a very early stage***
+
 Laravel package to modelize Forms/Surveys, save them into DB and handle them using API endpoints.
+
 For FE VueJS components please ping `tate@tpenranda.com` (npm package will be available by 2020).
 
 ## Installation
