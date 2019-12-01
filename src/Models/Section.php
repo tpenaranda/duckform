@@ -3,7 +3,7 @@
 namespace TPenaranda\Duckform\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany};
 
 class Section extends Model
 {
@@ -20,6 +20,11 @@ class Section extends Model
     protected $hidden = [
         'id',
     ];
+
+    public function form(): BelongsTo
+    {
+        return $this->belongsTo(Form::class);
+    }
 
     public function questions(): HasMany
     {

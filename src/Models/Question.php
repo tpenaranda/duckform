@@ -30,9 +30,9 @@ class Question extends Model
         'type',
     ];
 
-    public function form(): BelongsTo
+    public function section(): BelongsTo
     {
-        return $this->belongsTo(Form::class);
+        return $this->belongsTo(Section::class);
     }
 
     public function possibleAnswers(): HasMany

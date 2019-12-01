@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use TPenaranda\Duckform\Facade\Duckform;
-use TPenaranda\Duckform\Http\Resources\Form as FormResource;
-use TPenaranda\Duckform\Http\Resources\FormSubmit as FormSubmitResource;
+use TPenaranda\Duckform\Http\Resources\{Form as FormResource, FormSubmit as FormSubmitResource};
 use TPenaranda\Duckform\Models\{Form, FormSubmit, PossibleAnswer};
 
 class FormController extends Controller
@@ -75,6 +74,10 @@ class FormController extends Controller
             }
         }
 
+        if ($formSubmit->isFullfiled()) {
+            $formSubmit->markAsCompleted();
+        }
+
         return FormSubmitResource::make($formSubmit->refresh());
     }
 
@@ -98,6 +101,10 @@ class FormController extends Controller
                     ]);
                 }
             }
+        }
+
+        if ($formSubmit->isFullfiled()) {
+            $formSubmit->markAsCompleted();
         }
 
         return FormSubmitResource::make($formSubmit->refresh());
