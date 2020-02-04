@@ -5,7 +5,7 @@
 Laravel package to modelize Forms/Surveys, save them into DB and handle them using API endpoints. There is a VueJS package to handle the FE side ([see here](https://github.com/tpenaranda/vue-duckform)).
 Check https://vue-duckform-demo.tpenaranda.com for a live version of the FE side.
 
-Form schema is defined [this way](https://raw.githubusercontent.com/tpenaranda/duckform/master/src/Database/Seeders/FormExamples/patient-intake-questionnaire.php).*
+*Form schema is defined [this way](https://raw.githubusercontent.com/tpenaranda/duckform/master/src/Database/Seeders/FormExamples/patient-intake-questionnaire.php).*
 <p align="center">
   <img src="https://raw.githubusercontent.com/tpenaranda/duckform/master/screenshot.png" width="800">
 </p>
