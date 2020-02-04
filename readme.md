@@ -2,13 +2,10 @@
 
 [![Latest Stable Version](https://poser.pugx.org/tpenaranda/duckform/v/stable)](https://packagist.org/packages/tpenaranda/duckform) [![Total Downloads](https://poser.pugx.org/tpenaranda/duckform/downloads)](https://packagist.org/packages/tpenaranda/duckform) [![License](https://poser.pugx.org/tpenaranda/duckform/license)](https://packagist.org/packages/tpenaranda/duckform)
 
-***WIP > This is on a very early stage < WIP***
+Laravel package to modelize Forms/Surveys, save them into DB and handle them using API endpoints. There is a VueJS package to handle the FE side ([see here](https://github.com/tpenaranda/vue-duckform)).
+Check https://vue-duckform-demo.tpenaranda.com for a live version of the FE side.
 
-Laravel package to modelize Forms/Surveys, save them into DB and handle them using API endpoints.
-
-For FE VueJS components please ping `tate@tpenaranda.com` (npm package will be available by 2020).
-
-*This package is being used to feed a VueJS app as you can see below. Form schema is defined [this way](https://raw.githubusercontent.com/tpenaranda/duckform/master/src/Database/Seeders/FormExamples/patient-intake-questionnaire.php).*
+Form schema is defined [this way](https://raw.githubusercontent.com/tpenaranda/duckform/master/src/Database/Seeders/FormExamples/patient-intake-questionnaire.php).*
 <p align="center">
   <img src="https://raw.githubusercontent.com/tpenaranda/duckform/master/screenshot.png" width="800">
 </p>
